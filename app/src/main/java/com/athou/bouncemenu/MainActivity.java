@@ -48,7 +48,7 @@ public class MainActivity extends Activity {
     BounceMenu bounceMenu;
 
     @Override
-    public boolean onMenuItemSelected(int featureId, MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {
         if (bounceMenu == null) {
             bounceMenu = BounceMenu.makeMenu(this, R.layout.layout_bounce_menu, myAdapter);
             bounceMenu.show();
@@ -56,11 +56,6 @@ public class MainActivity extends Activity {
             bounceMenu.dismiss();
             bounceMenu = null;
         }
-        return super.onMenuItemSelected(featureId, item);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
         return super.onOptionsItemSelected(item);
     }
 }
